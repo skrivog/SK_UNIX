@@ -94,9 +94,11 @@ Found at column 2480
 awk '{for(i=1;i<=NF;i++) if($i == "ZMMMR") count++}
 END{print count}' transjoin.txt = see how many columns in each 
 27
+
 awk '{for(i=1;i<=NF;i++) if($i == "ZMMLR") count++}
 END{print count}' transjoin.txt
 1256
+
 awk '{for(i=1;i<=NF;i++) if($i == "ZMMIL") count++}
 END{print count}' transjoin.txt
 290
