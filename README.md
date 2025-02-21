@@ -399,6 +399,7 @@ awk -F "\t" '{print NF; exit}' Teo_dchr1.txt Teo_dchr2.txt Teo_dchr3.txt Teo_dch
 ```
 
 Here is my brief description of what this code does
+
 Similar to the maize, teosinte directories were made for both increasing and decreasing order. Within each, there are files for chromosomes 1 through 10. Word counts, columns and files were visualized using vim to check for accuracy. 
 
 
