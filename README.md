@@ -240,7 +240,7 @@ awk -F "\t" '{print NF; exit}' Maize_dchr1.txt Maize_dchr2.txt Maize_dchr3.txt M
 ```
 Here is my brief description of what this code does:
 
-Creates a directory to hold files for the assignment named SK_UNIX. Joins the data files together to analyze in, checking word count, columns and visualizing the files to check for accuracy. Directories were made for Maize increasing order (Maize_increasing.txt) and decreasing order (Maize_decreasing.txt). Question marks were changed to hyphens in the decreasing order maize file. Separate files were made for chromosomes 1 through 10 and are both in increasing (chr1.txt) and decreasing order (dchr1.txt). Multiple and unknown chromosomes are in increasing order. 
+Creates a directory to hold files for the assignment named SK_UNIX. Joins the data files together to analyze in, checking word count, columns and visualizing the files to check for accuracy. Directories were made for Maize increasing order (Maize_increasing.txt) and decreasing order (Maize_decreasing.txt). Question marks were changed to hyphens in the decreasing order maize file. Separate files were made for chromosomes 1 through 10 and are both in increasing (Maize_chr1.txt, Maize_chr2.txt, Maize_chr3.txt, etc.) and decreasing order (Maize_dchr1.txt, Maize_dchr2.txt, Maize_dchr3.txt, etc.). Multiple and unknown chromosomes are in increasing order. 
 
 ### Teosinte Data
 
@@ -357,9 +357,6 @@ cd Teo_increasing.txt/
 Teo_chr10.txt  Teo_chr2.txt  Teo_chr4.txt  Teo_chr6.txt  Teo_chr8.txt  Teo_multiple.txt
 Teo_chr1.txt   Teo_chr3.txt  Teo_chr5.txt  Teo_chr7.txt  Teo_chr9.txt  Teo_unknown.txt
 
-
-
-
 mv Teo_hyphen.txt Teo_decreasing.txt/
 [skrivog@nova SK_UNIX]$ cd Teo_decreasing.txt/
 
@@ -400,7 +397,7 @@ awk -F "\t" '{print NF; exit}' Teo_dchr1.txt Teo_dchr2.txt Teo_dchr3.txt Teo_dch
 
 Here is my brief description of what this code does
 
-Similar to the maize, teosinte directories were made for both increasing and decreasing order. Within each, there are files for chromosomes 1 through 10. Word counts, columns and files were visualized using vim to check for accuracy. 
+Similar to the maize, teosinte directories were made for both increasing (Teo_increasing.txt) and decreasing order (Teo_decreasing.txt). Within each, there are files for chromosomes 1 through 10 in both increasing (Teo_chr1.txt, Teo_chr2.txt, Teo_chr3.txt, etc.) and decreasing order (Teo_dchr1.txt, Teo_dchr2.txt, Teo_dchr3.txt, etc.). Word counts, columns and files were visualized using vim to check for accuracy. Multiple and unknown chromosome files were placed in increasing order. 
 
 
 
