@@ -25,12 +25,6 @@ By inspecting this file I learned that:
 2. The file's word count was 2783 2744038 11051939
 3. The file has 986 columns
 
-or
-
-* point 1
-* point 2
-* point 3
-
 ###Attributes of `snp_position.txt`
 
 ```
@@ -53,12 +47,6 @@ By inspecting this file I learned that:
 1. The file contained ASCII text
 2. The word count of the file is 984 13198 82763
 3. The file has 15 columns
-
-or
-
-* point 1
-* point 2
-* point 3
 
 ##Data Processing
 
