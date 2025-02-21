@@ -5,8 +5,6 @@
 ###Attributes of `fang_et_al_genotypes`
 
 ```
-here is my snippet of code used for data inspection
-```
 ls -lh fang_et_al_genotypes.txt
 -rw-rw-r--. 1 skrivog domain users 11M Feb 17 15:28 fang_et_al_genotypes.txt
 
@@ -19,6 +17,8 @@ wc fang_et_al_genotypes.txt
 awk -F "\t" '{print NF; exit}' fang_et_al_genotypes.txt
 986
 
+```
+
 By inspecting this file I learned that:
 
 1. The file composed of ASCII text with very long lines
@@ -27,8 +27,6 @@ By inspecting this file I learned that:
 
 ###Attributes of `snp_position.txt`
 
-```
-here is my snippet of code used for data inspection
 ```
 ls -lh snp_position.txt
 -rw-rw-r--. 1 skrivog domain users 81K Feb 17 15:28 snp_position.txt
@@ -42,6 +40,8 @@ wc snp_position.txt
 awk -F "\t" '{print NF; exit}' snp_position.txt
 15
 
+```
+
 By inspecting this file I learned that:
 
 1. The file contained ASCII text
@@ -52,8 +52,6 @@ By inspecting this file I learned that:
 
 ###Maize Data
 
-```
-here is my snippet of code used for data processing
 ```
 mkdir SK_UNIX
 Ls
@@ -239,15 +237,13 @@ wc Maize_dchr1.txt Maize_dchr2.txt Maize_dchr3.txt Maize_dchr4.txt Maize_dchr5.t
 awk -F "\t" '{print NF; exit}' Maize_dchr1.txt Maize_dchr2.txt Maize_dchr3.txt Maize_dchr4.txt Maize_dchr5.txt Maize_dchr6.txt Maize_dchr7.txt Maize_dchr8.txt Maize_dchr9.txt Maize_dchr10.txt
 1576
 
+```
 Here is my brief description of what this code does:
 
 Creates a directory to hold files for the assignment. Joins the data files together to analyze, checking word count, columns and visualizing the files to check for accuracy. Directories were made for Maize increasing order and decreasing order. Question marks were changed to hyphens in the decreasing order maize file. Separate files were made for chromosomes 1 through 10 and are both in increasing and decreasing order. Multiple and unknown chromosomes are in increasing order. 
 
-
 ###Teosinte Data
 
-```
-here is my snippet of code used for data processing
 ```
 awk '{for(i=1;i<=NF;i++) if ($i == "ZMPBA") print "Found at column " i}' transposed_joined.txt
 Found at column 89
@@ -400,6 +396,7 @@ hr9.txt Teo_dchr10.txt
 awk -F "\t" '{print NF; exit}' Teo_dchr1.txt Teo_dchr2.txt Teo_dchr3.txt Teo_dchr4.txt Teo_dchr5.txt Teo_dchr6.txt Teo_dchr7.txt Teo_dchr8.txt Teo_dchr9.txt Teo_dchr10.txt
 978
 
+```
 
 Here is my brief description of what this code does
 Similar to the maize, teosinte directories were made for both increasing and decreasing order. Within each, there are files for chromosomes 1 through 10. Word counts, columns and files were visualized using vim to check for accuracy. 
