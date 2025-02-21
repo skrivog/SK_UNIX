@@ -240,7 +240,7 @@ awk -F "\t" '{print NF; exit}' Maize_dchr1.txt Maize_dchr2.txt Maize_dchr3.txt M
 ```
 Here is my brief description of what this code does:
 
-Creates a directory to hold files for the assignment. Joins the data files together to analyze, checking word count, columns and visualizing the files to check for accuracy. Directories were made for Maize increasing order and decreasing order. Question marks were changed to hyphens in the decreasing order maize file. Separate files were made for chromosomes 1 through 10 and are both in increasing and decreasing order. Multiple and unknown chromosomes are in increasing order. 
+Creates a directory to hold files for the assignment named SK_UNIX. Joins the data files together to analyze in, checking word count, columns and visualizing the files to check for accuracy. Directories were made for Maize increasing order (Maize_increasing.txt) and decreasing order (Maize_decreasing.txt). Question marks were changed to hyphens in the decreasing order maize file. Separate files were made for chromosomes 1 through 10 and are both in increasing (chr1.txt) and decreasing order (dchr1.txt). Multiple and unknown chromosomes are in increasing order. 
 
 ### Teosinte Data
 
