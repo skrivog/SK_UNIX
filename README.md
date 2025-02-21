@@ -142,16 +142,16 @@ grep -v "^#" Maize_sorted.txt | cut -f2 | sort | uniq -c
      27 unknown
 
 { head -n 1 Maize_sorted.txt && awk '$2 == 1' Maize_sorted.txt; } > Maize_chr1.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Maize_sorted.txt && awk '$2 == 1' Maize_sorted.txt; } > Maize_chr1.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Maize_sorted.txt && awk '$2 == 2' Maize_sorted.txt; } > Maize_chr2.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Maize_sorted.txt && awk '$2 == 3' Maize_sorted.txt; } > Maize_chr3.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Maize_sorted.txt && awk '$2 == 4' Maize_sorted.txt; } > Maize_chr4.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Maize_sorted.txt && awk '$2 == 5' Maize_sorted.txt; } > Maize_chr5.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Maize_sorted.txt && awk '$2 == 6' Maize_sorted.txt; } > Maize_chr6.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Maize_sorted.txt && awk '$2 == 7' Maize_sorted.txt; } > Maize_chr7.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Maize_sorted.txt && awk '$2 == 8' Maize_sorted.txt; } > Maize_chr8.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Maize_sorted.txt && awk '$2 == 9' Maize_sorted.txt; } > Maize_chr9.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Maize_sorted.txt && awk '$2 == 10' Maize_sorted.txt; } > Maize_chr10.txt
+{ head -n 1 Maize_sorted.txt && awk '$2 == 1' Maize_sorted.txt; } > Maize_chr1.txt
+{ head -n 1 Maize_sorted.txt && awk '$2 == 2' Maize_sorted.txt; } > Maize_chr2.txt
+{ head -n 1 Maize_sorted.txt && awk '$2 == 3' Maize_sorted.txt; } > Maize_chr3.txt
+{ head -n 1 Maize_sorted.txt && awk '$2 == 4' Maize_sorted.txt; } > Maize_chr4.txt
+{ head -n 1 Maize_sorted.txt && awk '$2 == 5' Maize_sorted.txt; } > Maize_chr5.txt
+{ head -n 1 Maize_sorted.txt && awk '$2 == 6' Maize_sorted.txt; } > Maize_chr6.txt
+{ head -n 1 Maize_sorted.txt && awk '$2 == 7' Maize_sorted.txt; } > Maize_chr7.txt
+{ head -n 1 Maize_sorted.txt && awk '$2 == 8' Maize_sorted.txt; } > Maize_chr8.txt
+{ head -n 1 Maize_sorted.txt && awk '$2 == 9' Maize_sorted.txt; } > Maize_chr9.txt
+{ head -n 1 Maize_sorted.txt && awk '$2 == 10' Maize_sorted.txt; } > Maize_chr10.txt
 { head -n 1 Maize_sorted.txt && awk '$2 == "multiple" Maize_sorted.txt; } > Maize_multiple.txt
 { head -n 1 Maize_sorted.txt && awk '$2 == "unknown" Maize_sorted.txt; } > Maize_unknown.txt
 
@@ -172,8 +172,9 @@ wc: Maize_unknown.txt: No such file or directory
     960 1512960 6093475 total
 
 { head -n 1 Maize_sorted.txt && awk '$2 == "multiple"' Maize_sorted.txt; } > Maize_multiple.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Maize_sorted.txt && awk '$2 == "unknown"' Maize_sorted.txt; } > Maize_unknown.txt
-[skrivog@nova SK_UNIX]$ wc Maize_multiple.txt Maize_unknown.txt
+{ head -n 1 Maize_sorted.txt && awk '$2 == "unknown"' Maize_sorted.txt; } > Maize_unknown.txt
+
+wc Maize_multiple.txt Maize_unknown.txt
      7  11026  47345 Maize_multiple.txt
     28  44128 180078 Maize_unknown.txt
     35  55154 227423 total
@@ -193,33 +194,30 @@ mkdir Maize_increasing.txt
 mv Maize_chr1.txt Maize_chr2.txt Maize_chr3.txt Maize_chr4.txt Maize_chr5.txt Maize_chr6.txt Maize_chr7.txt Maize_chr8.txt Maize_chr9.txt Maize_chr10.txt Maize_multiple.txt Maize_unknown.txt Maize_increasing.txt/
 
 mkdir Maize_decreasing.txt
-[skrivog@nova SK_UNIX]$ ls
+ls
 Maize_decreasing.txt  Maize_increasing.txt  maize_sort.txt  nogroup.txt       transposed_genotypes.txt  transposed_noheader.txt
 Maize_hyphen.txt      Maize_sorted.txt      maize.txt       snp_position.txt  transposed_joined.txt     withoutgroup.txt
 
 
 mv Maize_hyphen.txt Maize_decreasing.txt/
-[skrivog@nova SK_UNIX]$ cd Maize_decreasing.txt/
-[skrivog@nova Maize_decreasing.txt]$ ls
+cd Maize_decreasing.txt/
+ls
 Maize_hyphen.txt
 
 (head -n 1 Maize_hyphen.txt && tail -n +2 Maize_hyphen.txt | sort -k3,3nr) > Maize_decreasing10.txt
-[skrivog@nova Maize_decreasing.txt]$ ls
+ls
 Maize_decreasing10.txt  Maize_hyphen.txt
 
-Maize_decreasing10.txt  Maize_hyphen.txt
-[skrivog@nova Maize_decreasing.txt]$ { head -n 1 Maize_decreasing10.txt && awk '$2 == 1' Maize_decreasing.txt; } > Maize_dchr1.txt
-awk: fatal: cannot open file `Maize_decreasing.txt' for reading: No such file or directory
-[skrivog@nova Maize_decreasing.txt]$ { head -n 1 Maize_decreasing10.txt && awk '$2 == 1' Maize_decreasing10.txt; } > Maize_dchr1.txt
-[skrivog@nova Maize_decreasing.txt]$ { head -n 1 Maize_decreasing10.txt && awk '$2 == 2' Maize_decreasing10.txt; } > Maize_dchr2.txt
-[skrivog@nova Maize_decreasing.txt]$ { head -n 1 Maize_decreasing10.txt && awk '$2 == 3' Maize_decreasing10.txt; } > Maize_dchr3.txt
-[skrivog@nova Maize_decreasing.txt]$ { head -n 1 Maize_decreasing10.txt && awk '$2 == 4' Maize_decreasing10.txt; } > Maize_dchr4.txt
-[skrivog@nova Maize_decreasing.txt]$ { head -n 1 Maize_decreasing10.txt && awk '$2 == 5' Maize_decreasing10.txt; } > Maize_dchr5.txt
-[skrivog@nova Maize_decreasing.txt]$ { head -n 1 Maize_decreasing10.txt && awk '$2 == 6' Maize_decreasing10.txt; } > Maize_dchr6.txt
-[skrivog@nova Maize_decreasing.txt]$ { head -n 1 Maize_decreasing10.txt && awk '$2 == 7' Maize_decreasing10.txt; } > Maize_dchr7.txt
-[skrivog@nova Maize_decreasing.txt]$ { head -n 1 Maize_decreasing10.txt && awk '$2 == 8' Maize_decreasing10.txt; } > Maize_dchr8.txt
-[skrivog@nova Maize_decreasing.txt]$ { head -n 1 Maize_decreasing10.txt && awk '$2 == 9' Maize_decreasing10.txt; } > Maize_dchr9.txt
-[skrivog@nova Maize_decreasing.txt]$ { head -n 1 Maize_decreasing10.txt && awk '$2 == 10' Maize_decreasing10.txt; } > Maize_dchr10.txt
+{ head -n 1 Maize_decreasing10.txt && awk '$2 == 1' Maize_decreasing10.txt; } > Maize_dchr1.txt
+{ head -n 1 Maize_decreasing10.txt && awk '$2 == 2' Maize_decreasing10.txt; } > Maize_dchr2.txt
+{ head -n 1 Maize_decreasing10.txt && awk '$2 == 3' Maize_decreasing10.txt; } > Maize_dchr3.txt
+{ head -n 1 Maize_decreasing10.txt && awk '$2 == 4' Maize_decreasing10.txt; } > Maize_dchr4.txt
+{ head -n 1 Maize_decreasing10.txt && awk '$2 == 5' Maize_decreasing10.txt; } > Maize_dchr5.txt
+{ head -n 1 Maize_decreasing10.txt && awk '$2 == 6' Maize_decreasing10.txt; } > Maize_dchr6.txt
+{ head -n 1 Maize_decreasing10.txt && awk '$2 == 7' Maize_decreasing10.txt; } > Maize_dchr7.txt
+{ head -n 1 Maize_decreasing10.txt && awk '$2 == 8' Maize_decreasing10.txt; } > Maize_dchr8.txt
+{ head -n 1 Maize_decreasing10.txt && awk '$2 == 9' Maize_decreasing10.txt; } > Maize_dchr9.txt
+{ head -n 1 Maize_decreasing10.txt && awk '$2 == 10' Maize_decreasing10.txt; } > Maize_dchr10.txt
 
 wc Maize_dchr1.txt Maize_dchr2.txt Maize_dchr3.txt Maize_dchr4.txt Maize_dchr5.txt Maize_dchr6.txt Maize_dchr7.txt Maize_dchr8.txt Maize_dchr9.txt Maize_dchr10.txt
 156  245856  988210 Maize_dchr1.txt
@@ -260,9 +258,11 @@ Found at column 1022
 awk '{for(i=1;i<=NF;i++) if($i == "ZMPBA") count++}
 END{print count}' transposed_joined.txt
 900
+
 awk '{for(i=1;i<=NF;i++) if($i == "ZMPIL") count++}
 END{print count}' transposed_joined.txt
 41
+
 awk '{for(i=1;i<=NF;i++) if($i == "ZMPJA") count++}
 END{print count}' transposed_joined.txt
 34
@@ -309,17 +309,17 @@ grep -v "^#" Teo_sorted.txt | cut -f2 | sort | uniq -c
      27 unknown
 
 { head -n 1 Teo_sorted.txt && awk '$2 == 1' Teo_sorted.txt; } > Teo_chr1.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Teo_sorted.txt && awk '$2 == 2' Teo_sorted.txt; } > Teo_chr2.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Teo_sorted.txt && awk '$2 == 3' Teo_sorted.txt; } > Teo_chr3.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Teo_sorted.txt && awk '$2 == 4' Teo_sorted.txt; } > Teo_chr4.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Teo_sorted.txt && awk '$2 == 5' Teo_sorted.txt; } > Teo_chr5.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Teo_sorted.txt && awk '$2 == 6' Teo_sorted.txt; } > Teo_chr6.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Teo_sorted.txt && awk '$2 == 7' Teo_sorted.txt; } > Teo_chr7.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Teo_sorted.txt && awk '$2 == 8' Teo_sorted.txt; } > Teo_chr8.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Teo_sorted.txt && awk '$2 == 9' Teo_sorted.txt; } > Teo_chr9.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Teo_sorted.txt && awk '$2 == 10' Teo_sorted.txt; } > Teo_chr10.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Teo_sorted.txt && awk '$2 == "multiple"' Teo_sorted.txt; } > Teo_multiple.txt
-[skrivog@nova SK_UNIX]$ { head -n 1 Teo_sorted.txt && awk '$2 == "unknown"' Teo_sorted.txt; } > Teo_unknown.txt
+{ head -n 1 Teo_sorted.txt && awk '$2 == 2' Teo_sorted.txt; } > Teo_chr2.txt
+{ head -n 1 Teo_sorted.txt && awk '$2 == 3' Teo_sorted.txt; } > Teo_chr3.txt
+{ head -n 1 Teo_sorted.txt && awk '$2 == 4' Teo_sorted.txt; } > Teo_chr4.txt
+{ head -n 1 Teo_sorted.txt && awk '$2 == 5' Teo_sorted.txt; } > Teo_chr5.txt
+{ head -n 1 Teo_sorted.txt && awk '$2 == 6' Teo_sorted.txt; } > Teo_chr6.txt
+{ head -n 1 Teo_sorted.txt && awk '$2 == 7' Teo_sorted.txt; } > Teo_chr7.txt
+{ head -n 1 Teo_sorted.txt && awk '$2 == 8' Teo_sorted.txt; } > Teo_chr8.txt
+{ head -n 1 Teo_sorted.txt && awk '$2 == 9' Teo_sorted.txt; } > Teo_chr9.txt
+{ head -n 1 Teo_sorted.txt && awk '$2 == 10' Teo_sorted.txt; } > Teo_chr10.txt
+{ head -n 1 Teo_sorted.txt && awk '$2 == "multiple"' Teo_sorted.txt; } > Teo_multiple.txt
+{ head -n 1 Teo_sorted.txt && awk '$2 == "unknown"' Teo_sorted.txt; } > Teo_unknown.txt
 
 wc Teo_chr1.txt Teo_chr2.txt Teo_chr3.txt Teo_chr4.txt Teo_chr5.txt Teo_chr6.txt Teo_chr7.txt Teo_chr8.txt Teo_chr9.txt Teo_chr10.txt Teo_multiple.txt Teo_unknown.txt
     156  152568  613862 Teo_chr1.txt
@@ -353,28 +353,27 @@ mv Teo_chr1.txt Teo_chr2.txt Teo_chr3.txt Teo_chr4.txt Teo_chr5.txt Teo_chr6.txt
 t Teo_multiple.txt Teo_unknown.txt Teo_increasing.txt/
 
 cd Teo_increasing.txt/
-[skrivog@nova Teo_increasing.txt]$ ls
+ls
 Teo_chr10.txt  Teo_chr2.txt  Teo_chr4.txt  Teo_chr6.txt  Teo_chr8.txt  Teo_multiple.txt
 Teo_chr1.txt   Teo_chr3.txt  Teo_chr5.txt  Teo_chr7.txt  Teo_chr9.txt  Teo_unknown.txt
 
 mv Teo_hyphen.txt Teo_decreasing.txt/
-[skrivog@nova SK_UNIX]$ cd Teo_decreasing.txt/
-
-[skrivog@nova Teo_decreasing.txt]$ ls
+cd Teo_decreasing.txt/
+ls
 Teo_hyphen.txt
 
 (head -n 1 Teo_hyphen.txt && tail -n +2 Teo_hyphen.txt | sort -k3,3nr) > Teo_decreasing10.txt
 
-[skrivog@nova Teo_decreasing.txt]$ { head -n 1 Teo_decreasing10.txt && awk '$2 == 1' Teo_decreasing10.txt; } > Teo_dchr1.txt
-[skrivog@nova Teo_decreasing.txt]$ { head -n 1 Teo_decreasing10.txt && awk '$2 == 2' Teo_decreasing10.txt; } > Teo_dchr2.txt
-[skrivog@nova Teo_decreasing.txt]$ { head -n 1 Teo_decreasing10.txt && awk '$2 == 3' Teo_decreasing10.txt; } > Teo_dchr3.txt
-[skrivog@nova Teo_decreasing.txt]$ { head -n 1 Teo_decreasing10.txt && awk '$2 == 4' Teo_decreasing10.txt; } > Teo_dchr4.txt
-[skrivog@nova Teo_decreasing.txt]$ { head -n 1 Teo_decreasing10.txt && awk '$2 == 5' Teo_decreasing10.txt; } > Teo_dchr5.txt
-[skrivog@nova Teo_decreasing.txt]$ { head -n 1 Teo_decreasing10.txt && awk '$2 == 6' Teo_decreasing10.txt; } > Teo_dchr6.txt
-[skrivog@nova Teo_decreasing.txt]$ { head -n 1 Teo_decreasing10.txt && awk '$2 == 7' Teo_decreasing10.txt; } > Teo_dchr7.txt
-[skrivog@nova Teo_decreasing.txt]$ { head -n 1 Teo_decreasing10.txt && awk '$2 == 8' Teo_decreasing10.txt; } > Teo_dchr8.txt
-[skrivog@nova Teo_decreasing.txt]$ { head -n 1 Teo_decreasing10.txt && awk '$2 == 9' Teo_decreasing10.txt; } > Teo_dchr9.txt
-[skrivog@nova Teo_decreasing.txt]$ { head -n 1 Teo_decreasing10.txt && awk '$2 == 10' Teo_decreasing10.txt; } > Teo_dchr10.txt
+{ head -n 1 Teo_decreasing10.txt && awk '$2 == 1' Teo_decreasing10.txt; } > Teo_dchr1.txt
+{ head -n 1 Teo_decreasing10.txt && awk '$2 == 2' Teo_decreasing10.txt; } > Teo_dchr2.txt
+{ head -n 1 Teo_decreasing10.txt && awk '$2 == 3' Teo_decreasing10.txt; } > Teo_dchr3.txt
+{ head -n 1 Teo_decreasing10.txt && awk '$2 == 4' Teo_decreasing10.txt; } > Teo_dchr4.txt
+{ head -n 1 Teo_decreasing10.txt && awk '$2 == 5' Teo_decreasing10.txt; } > Teo_dchr5.txt
+{ head -n 1 Teo_decreasing10.txt && awk '$2 == 6' Teo_decreasing10.txt; } > Teo_dchr6.txt
+{ head -n 1 Teo_decreasing10.txt && awk '$2 == 7' Teo_decreasing10.txt; } > Teo_dchr7.txt
+{ head -n 1 Teo_decreasing10.txt && awk '$2 == 8' Teo_decreasing10.txt; } > Teo_dchr8.txt
+{ head -n 1 Teo_decreasing10.txt && awk '$2 == 9' Teo_decreasing10.txt; } > Teo_dchr9.txt
+{ head -n 1 Teo_decreasing10.txt && awk '$2 == 10' Teo_decreasing10.txt; } > Teo_dchr10.txt
 
 wc Teo_dchr1.txt Teo_dchr2.txt Teo_dchr3.txt Teo_dchr4.txt Teo_dchr5.txt Teo_dchr6.txt Teo_dchr7.txt Teo_dchr8.txt Teo_dc
 hr9.txt Teo_dchr10.txt
