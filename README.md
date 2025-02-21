@@ -1,8 +1,8 @@
 # UNIX_Assignment_Krivograd
 
-##Data Inspection
+## Data Inspection
 
-###Attributes of `fang_et_al_genotypes`
+### Attributes of `fang_et_al_genotypes`
 
 ```
 ls -lh fang_et_al_genotypes.txt
@@ -25,7 +25,7 @@ By inspecting this file I learned that:
 2. The file's word count was 2783 2744038 11051939
 3. The file has 986 columns
 
-###Attributes of `snp_position.txt`
+### Attributes of `snp_position.txt`
 
 ```
 ls -lh snp_position.txt
@@ -48,9 +48,9 @@ By inspecting this file I learned that:
 2. The word count of the file is 984 13198 82763
 3. The file has 15 columns
 
-##Data Processing
+## Data Processing
 
-###Maize Data
+### Maize Data
 
 ```
 mkdir SK_UNIX
@@ -242,7 +242,7 @@ Here is my brief description of what this code does:
 
 Creates a directory to hold files for the assignment. Joins the data files together to analyze, checking word count, columns and visualizing the files to check for accuracy. Directories were made for Maize increasing order and decreasing order. Question marks were changed to hyphens in the decreasing order maize file. Separate files were made for chromosomes 1 through 10 and are both in increasing and decreasing order. Multiple and unknown chromosomes are in increasing order. 
 
-###Teosinte Data
+### Teosinte Data
 
 ```
 awk '{for(i=1;i<=NF;i++) if ($i == "ZMPBA") print "Found at column " i}' transposed_joined.txt
